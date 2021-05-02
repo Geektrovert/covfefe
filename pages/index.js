@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Box, Center, Flex, Icon } from "@chakra-ui/react";
+import { Box, Center, Flex, Icon, VisuallyHidden } from "@chakra-ui/react";
 import { FiFacebook, FiInstagram } from "react-icons/fi";
 
 export default function Home() {
@@ -67,7 +67,7 @@ export default function Home() {
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
-          transition={{ easing: "easeInOut", duration: 0.7 }}
+          transition={{ easing: "easeInOut", duration: 1 }}
         >
           C<span style={{ fontFeatureSettings: `"aalt"` }}>R</span>AFT{" "}
           <span style={{ fontFeatureSettings: `"aalt"` }}>G</span>REAT C
@@ -108,7 +108,7 @@ export default function Home() {
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-100%", opacity: 0 }}
-              transition={{ easing: "easeInOut", duration: 0.5 }}
+              transition={{ easing: "easeInOut", duration: 0.7 }}
             >
               North End Coffee Roasters is your single source for fresh-roasted
               coffee in Bangladesh.
@@ -133,7 +133,7 @@ export default function Home() {
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-100%", opacity: 0 }}
-              transition={{ easing: "easeInOut", duration: 0.5 }}
+              transition={{ easing: "easeInOut", duration: 0.7 }}
             >
               North End Coffee Roasters brings you the highest quality 100%
               arabica coffees from around the world, roasted locally for maximum
@@ -147,12 +147,12 @@ export default function Home() {
         >
           <Box
             as="button"
-            bg="success.500"
-            color="brand.100"
+            bg="success.300"
+            color="brand.700"
             fontWeight="600"
-            _hover={{ bg: "success.600" }}
-            _focus={{ bg: "success.600" }}
-            _active={{ bg: "success.600" }}
+            _hover={{ color: "white", bg: "success.700" }}
+            _focus={{ color: "white", bg: "success.700" }}
+            _active={{ color: "white", bg: "success.700" }}
             m={6}
             p={3}
           >
@@ -172,6 +172,7 @@ export default function Home() {
               color="brand.700"
               _hover={{ color: "danger.500" }}
             >
+              <VisuallyHidden>Go to Facebook page</VisuallyHidden>
               <Icon as={FiFacebook} />
             </Box>
           </Link>
@@ -188,6 +189,7 @@ export default function Home() {
               color="brand.700"
               _hover={{ color: "danger.500" }}
             >
+              <VisuallyHidden>Go to Instagram page</VisuallyHidden>
               <Icon as={FiInstagram} />
             </Box>
           </Link>

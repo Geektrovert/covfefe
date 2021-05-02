@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
+import NavBarContainer from "components/Nav/NavBarContainer";
 import colors from "styles/colors";
 
 const theme = extendTheme({
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }) {
           content="Craft great coffee, creat great community"
         />
       </Head>
-      <Component {...pageProps} />
+      <NavBarContainer>
+        <Component {...pageProps} />
+      </NavBarContainer>
     </ChakraProvider>
   );
 }

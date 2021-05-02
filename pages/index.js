@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <Flex
       direction="column"
-      h="100vh"
+      h={{ base: "calc(100vh - 4rem)", lg: "calc(100vh - 6rem)" }}
       bg="brand.100"
       justify="center"
       align="center"
@@ -32,18 +32,14 @@ export default function Home() {
       <Box
         as="h1"
         color="brand.700"
-        fontSize={{
-          base: "calc(1rem + 1.5vw)",
-          md: "calc(1rem + 2vw)",
-          lg: "calc(0.8rem + 3vw)",
-          xl: "calc(0.8rem + 4vw)",
-        }}
-        fontWeight="900"
+        fontSize="calc(1rem + 4vw)"
+        fontWeight="800"
         lineHeight={1.4}
         borderWidth={1}
         borderColor="brand.700"
         px={{ base: 4, md: 8, lg: 20, xl: 24 }}
         py={4}
+        mx={3}
         textAlign="left"
       >
         CRAFT GREAT COFFEE

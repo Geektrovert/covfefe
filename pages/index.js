@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Box, Center, Flex, Icon } from "@chakra-ui/react";
 import { FiFacebook, FiInstagram } from "react-icons/fi";
 
@@ -12,7 +13,6 @@ export default function Home() {
       align="center"
     >
       <Box
-        as="p"
         color="brand.700"
         fontFamily="FormulaCondensed, Jost, sans-serif"
         fontSize={{ base: "0.8rem", lg: "1rem" }}
@@ -33,12 +33,19 @@ export default function Home() {
           md: "",
           lg: "translateX(60%)",
           xl: "translateX(100%)",
+          overflow: "hidden",
         }}
       >
-        REFRESH YOURSELF WITH COFFEE
+        <motion.p
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ easing: "easeInOut", duration: 0.5 }}
+        >
+          REFRESH YOURSELF WITH COFFEE
+        </motion.p>
       </Box>
       <Box
-        as="h1"
         color="brand.700"
         fontFamily="FormulaCondensed, Jost, sans-serif"
         fontWeight="bold"
@@ -54,15 +61,24 @@ export default function Home() {
         py={4}
         mx={3}
         textAlign="left"
+        overflow="hidden"
       >
-        C<span style={{ fontFeatureSettings: `"aalt"` }}>R</span>AFT{" "}
-        <span style={{ fontFeatureSettings: `"aalt"` }}>G</span>REAT C
-        <span style={{ fontFeatureSettings: `"aalt"` }}>O</span>FF
-        <span style={{ fontFeatureSettings: `"aalt"` }}>E</span>E {" — "}
-        <br />
-        CREATE G<span style={{ fontFeatureSettings: `"aalt"` }}>R</span>EAT C
-        <span style={{ fontFeatureSettings: `"aalt"` }}>O</span>MMUN
-        <span style={{ fontFeatureSettings: `"aalt"` }}>I</span>TY
+        <motion.h1
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100%", opacity: 0 }}
+          transition={{ easing: "easeInOut", duration: 0.7 }}
+        >
+          C<span style={{ fontFeatureSettings: `"aalt"` }}>R</span>AFT{" "}
+          <span style={{ fontFeatureSettings: `"aalt"` }}>G</span>REAT C
+          <span style={{ fontFeatureSettings: `"aalt"` }}>O</span>FF
+          <span style={{ fontFeatureSettings: `"aalt"` }}>E</span>E {" — "}
+          <br />
+          CREAT<span style={{ fontFeatureSettings: `"aalt"` }}>E</span> G
+          <span style={{ fontFeatureSettings: `"aalt"` }}>R</span>EAT CO
+          <span style={{ fontFeatureSettings: `"aalt"` }}>M</span>MUN
+          <span style={{ fontFeatureSettings: `"aalt"` }}>I</span>TY
+        </motion.h1>
       </Box>
       <Flex
         wrap="wrap"
@@ -80,16 +96,23 @@ export default function Home() {
           maxHeight="min-content"
         >
           <Box
-            as="p"
             borderBottomWidth={{ base: 0, md: 0, lg: 1, xl: 1 }}
             borderLeftWidth={1}
             borderRightWidth={{ base: 1, md: 1, lg: 0, xl: 0 }}
             borderColor="brand.700"
             px={6}
             py={3}
+            overflow="hidden"
           >
-            North End Coffee Roasters is your single source for fresh-roasted
-            coffee in Bangladesh.
+            <motion.p
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              transition={{ easing: "easeInOut", duration: 0.5 }}
+            >
+              North End Coffee Roasters is your single source for fresh-roasted
+              coffee in Bangladesh.
+            </motion.p>
           </Box>
         </Box>
         <Box
@@ -98,17 +121,24 @@ export default function Home() {
           w={{ sm: "100%", md: "100", lg: "40%", xl: "40%" }}
         >
           <Box
-            as="p"
             borderBottomWidth={1}
             borderLeftWidth={1}
             borderRightWidth={1}
             borderColor="brand.700"
             px={6}
             py={3}
+            overflow="hidden"
           >
-            North End Coffee Roasters brings you the highest quality 100%
-            arabica coffees from around the world, roasted locally for maximum
-            freshness.
+            <motion.p
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              transition={{ easing: "easeInOut", duration: 0.5 }}
+            >
+              North End Coffee Roasters brings you the highest quality 100%
+              arabica coffees from around the world, roasted locally for maximum
+              freshness.
+            </motion.p>
           </Box>
         </Box>
         <Box
@@ -163,7 +193,7 @@ export default function Home() {
           </Link>
         </Center>
       </Box>
-      <Box w="100%" display={{ base: "block", lg: "none" }}>
+      <Box w="100%" display={{ base: "block", lg: "none" }} mt="auto">
         <Box
           as="button"
           w="calc(100% - 2 * 1rem)"
